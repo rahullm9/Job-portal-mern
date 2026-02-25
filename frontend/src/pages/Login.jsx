@@ -1,7 +1,10 @@
 import { useState } from "react";
 import API from "../services/api";
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function Login() {
+  const navigate = useNavigate();
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -9,9 +12,15 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const res = await API.post("/auth/login", form);
-    localStorage.setItem("token", res.data.token);
-    alert("Login Successful");
+    try {
+      const res = await API.post("/auth/login", form);
+      localStorage.setItem("token", res.data.token);
+      alert("Login Successful");
+      navigate("/dashboard");
+    } catch (error) {
+      console.log(error);
+      alert("Something wrong");
+    }
   };
 
   return (
@@ -26,6 +35,9 @@ function Login() {
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
       <button>Login</button>
+      <p>
+        Don't have an acounte? <Link to="/register">Register here</Link>{" "}
+      </p>
     </form>
   );
 }
