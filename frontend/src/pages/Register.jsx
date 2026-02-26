@@ -9,6 +9,7 @@ function Register() {
     name: "",
     email: "",
     password: "",
+    role: "",
   });
 
   const handleSubmit = async (e) => {
@@ -16,7 +17,7 @@ function Register() {
     try {
       await API.post("/auth/register", form);
       alert("Registered Successfully");
-      navigate("/login");
+      navigate("/");
     } catch (error) {
       console.log(error);
       alert("Registration Failed");
@@ -41,6 +42,10 @@ function Register() {
         value={form.password}
         onChange={(e) => setForm({ ...form, password: e.target.value })}
       />
+      <select onChange={(e) => setForm({ ...form, role: e.target.value })}>
+        <option value="user">Job Seeker</option>
+        <option value="recruiter">Recruiter</option>
+      </select>
       <button>Register</button>
     </form>
   );

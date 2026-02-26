@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import { jwtDecode } from "jwt-decode";
 
 function Login() {
   const navigate = useNavigate();
@@ -12,14 +13,21 @@ function Login() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const res = await API.post("/auth/login", form);
-      localStorage.setItem("token", res.data.token);
-      alert("Login Successful");
+
+    const res = await API.post("/auth/login", form);
+
+    const token = res.data.token;
+
+    localStorage.setItem("token", token);
+
+    const decoded = jwtDecode(token);
+
+    if (decoded.role === "user") {
       navigate("/dashboard");
-    } catch (error) {
-      console.log(error);
-      alert("Something wrong");
+    } else if (decoded.role === "recruiter") {
+      navigate("/recruiter-dashboard");
+    } else if (decoded.role === "admin") {
+      navigate("/admin");
     }
   };
 
@@ -36,7 +44,7 @@ function Login() {
       />
       <button>Login</button>
       <p>
-        Don't have an acounte? <Link to="/register">Register here</Link>{" "}
+        Don't have an acount? <Link to="/register">Register here</Link>{" "}
       </p>
     </form>
   );
