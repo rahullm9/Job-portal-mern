@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
+import DashboardSidebar from "../components/DashboardSidebar";
 
 function Dashboard() {
   const [user, setUser] = useState(null);
@@ -21,8 +22,12 @@ function Dashboard() {
   }, []);
 
   return (
-    <div>
-      <h2>Welcome {user?.name}</h2>
+    <div className="dashboard-layout">
+      <DashboardSidebar role="user" />
+      <main className="dashboard-main">
+        <h1>User Dashboard</h1>
+        <p>Welcome {user?.name}</p>
+      </main>
     </div>
   );
 }
