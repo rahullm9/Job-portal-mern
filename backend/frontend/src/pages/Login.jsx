@@ -2,6 +2,7 @@ import { useState } from "react";
 import API from "../services/api";
 import { useNavigate, Link } from "react-router-dom";
 import { jwtDecode } from "jwt-decode";
+import logo from "../assets/logo.png";
 import "./Auth.css";
 
 function Login() {
@@ -45,7 +46,7 @@ function Login() {
         {/* Left panel */}
         <div className="auth-panel auth-panel--left">
           <div className="auth-panel__logo">
-            <span>💼</span>
+            <img src={logo} className="auth-logo-img" alt="Dreamjob Logo" />
             <span className="auth-panel__logo-text">Dreamjob</span>
           </div>
           <h2 className="auth-panel__title">Welcome back!</h2>

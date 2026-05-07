@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 import "./Home.css";
 
 const stats = [
@@ -64,7 +65,7 @@ export default function Home() {
       {/* NAVBAR */}
       <nav className={`home-nav ${scrolled ? "home-nav--scrolled" : ""}`}>
         <div className="home-nav__logo">
-          <span className="logo-icon">💼</span>
+          <img src={logo} className="logo-img" alt="Dreamjob Logo" />
           <span className="logo-text">Dreamjob</span>
         </div>
         <div className="home-nav__links">
@@ -228,7 +229,7 @@ export default function Home() {
         <div className="footer__top">
           <div className="footer__brand">
             <div className="home-nav__logo">
-              <span className="logo-icon">💼</span>
+              <img src={logo} className="logo-img" alt="Dreamjob Logo" />
               <span className="logo-text">Dreamjob</span>
             </div>
             <p className="footer__brand-desc">Connecting talent with opportunity. Your career journey starts here.</p>

@@ -102,7 +102,11 @@
   align-items: center;
   gap: 10px;
   margin-bottom: 48px;
-  font-size: 1.5rem;
+}
+.auth-logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
 }
 .auth-panel__logo-text {
   font-weight: 800;

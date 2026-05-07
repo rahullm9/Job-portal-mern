@@ -57,7 +57,11 @@
   text-decoration: none;
 }
 
-.db-sidebar__logo-icon { font-size: 1.5rem; }
+.db-sidebar__logo-img {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+}
 .db-sidebar__logo-text {
   font-size: 1.2rem;
   font-weight: 800;

@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import API from "../services/api";
 import { useNavigate } from "react-router-dom";
+import logo from "../assets/logo.png";
 import "./Dashboard.css";
 
 const appliedJobs = [
@@ -65,7 +66,7 @@ export default function UserDashboard() {
       {/* SIDEBAR */}
       <aside className="db-sidebar">
         <div className="db-sidebar__logo">
-          <span className="db-sidebar__logo-icon">💼</span>
+          <img src={logo} className="db-sidebar__logo-img" alt="Dreamjob Logo" />
           <span className="db-sidebar__logo-text">Dreamjob</span>
         </div>
 
