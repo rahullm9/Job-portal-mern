@@ -46,7 +46,7 @@ function Login() {
         <div className="auth-panel auth-panel--left">
           <div className="auth-panel__logo">
             <span>💼</span>
-            <span className="auth-panel__logo-text">JobPortal</span>
+            <span className="auth-panel__logo-text">Dreamjob</span>
           </div>
           <h2 className="auth-panel__title">Welcome back!</h2>
           <p className="auth-panel__desc">Sign in to continue your job search journey and discover new opportunities.</p>

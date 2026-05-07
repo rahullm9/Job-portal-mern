@@ -65,7 +65,7 @@ export default function Home() {
       <nav className={`home-nav ${scrolled ? "home-nav--scrolled" : ""}`}>
         <div className="home-nav__logo">
           <span className="logo-icon">💼</span>
-          <span className="logo-text">JobPortal</span>
+          <span className="logo-text">Dreamjob</span>
         </div>
         <div className="home-nav__links">
           <a href="#features" className="nav-link">Features</a>
@@ -215,7 +215,7 @@ export default function Home() {
         <div className="cta-orb cta-orb--2" />
         <div className="cta-content">
           <h2 className="cta-title">Ready to Start Your Journey?</h2>
-          <p className="cta-sub">Join thousands of professionals who found their perfect job through JobPortal.</p>
+          <p className="cta-sub">Join thousands of professionals who found their perfect job through Dreamjob.</p>
           <div className="cta-actions">
             <Link to="/register" className="hero-btn hero-btn--primary">Create Free Account</Link>
             <Link to="/login" className="hero-btn hero-btn--ghost">Sign In</Link>
@@ -229,7 +229,7 @@ export default function Home() {
           <div className="footer__brand">
             <div className="home-nav__logo">
               <span className="logo-icon">💼</span>
-              <span className="logo-text">JobPortal</span>
+              <span className="logo-text">Dreamjob</span>
             </div>
             <p className="footer__brand-desc">Connecting talent with opportunity. Your career journey starts here.</p>
           </div>
@@ -255,7 +255,7 @@ export default function Home() {
           </div>
         </div>
         <div className="footer__bottom">
-          <span>© 2025 JobPortal. All rights reserved.</span>
+          <span>© 2025 Dreamjob. All rights reserved.</span>
           <span>Built with ❤️ for job seekers everywhere</span>
         </div>
       </footer>
